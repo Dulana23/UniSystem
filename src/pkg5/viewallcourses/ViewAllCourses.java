@@ -16,11 +16,8 @@ public class ViewAllCourses {
        System.out.println();
        System.out.printf("%-10s %-20s %-8s %-6s %-8s%n","Code", "Course Name", "Credits", "Year", "Semester");
        
-       for (Course c : courses) {
-            System.out.printf("%-10s %-20s %-8d %-6d %-8d%n",
-                    c.getCourseCode(), c.getCourseName(),
-                    c.getCredits(), c.getAcademicYear(), c.getSemester());
+      
         }
     }
     
-}
+
