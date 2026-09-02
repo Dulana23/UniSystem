@@ -19,7 +19,7 @@ public class Calculatgrade {
 
     }
 
-    static String getGrade(double marks) {
+    static String getGrade(double marks)  {
 
         if (marks >= 90)
             return "A+";
