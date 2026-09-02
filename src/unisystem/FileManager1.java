@@ -46,6 +46,7 @@ public class FileManager1 {
            bufferWriter.write(studentData);
            bufferWriter.newLine();
            System.out.println("Student Add Successfuly");
+           System.out.println("");
            
     }catch(FileNotFoundException e){
            System.out.println("Could not locate file location"); 
