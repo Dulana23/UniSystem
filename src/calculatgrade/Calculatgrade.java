@@ -46,6 +46,37 @@ public class Calculatgrade {
 
         return "E";
     }
+  static double getGPA(double marks) {
+
+        String grade = getGrade(marks);
+
+        switch (grade) {
+            case "A+":
+                return 4.00;
+            case "A":
+                return 4.00;
+            case "A-":
+                return 3.70;
+            case "B+":
+                return 3.30;
+            case "B":
+                return 3.00;
+            case "B-":
+                return 2.70;
+            case "C+":
+                return 2.30;
+            case "C":
+                return 2.00;
+            case "C-":
+                return 1.70;
+            case "D+":
+                return 1.30;
+            case "D":
+                return 1.00;
+            default:
+                return 0.00;
+        }
+    }
 
     public static void calculateGrade(double marks) {
 
