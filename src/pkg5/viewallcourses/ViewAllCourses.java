@@ -12,8 +12,7 @@ public class ViewAllCourses {
         courses.add(new Course("PST12113", "Database Mgt Lab", 3, 1, 2));
          System.out.println("===== COURSE LIST =====");
         System.out.println();
-        System.out.printf("%-10s %-20s %-8s %-6s %-8s%n",
-                "Code", "Course Name", "Credits", "Year", "Semester");
+        System.out.printf("%-10s %-20s %-8s %-6s %-8s%n", "Code", "Course Name", "Credits", "Year", "Semester");
     }
     }
     
