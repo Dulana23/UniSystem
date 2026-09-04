@@ -15,6 +15,26 @@ public class Course {
         this.credits = credits;
         this.academicYear = academicYear;
         this.semester = semester;
+        
+        public String getCourseCode() {
+        return courseCode;
     }
 
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+
+    public int getAcademicYear() {
+        return academicYear;
+    }
+
+    public int getSemester() {
+        return semester;
+    }
 }
+    
+
