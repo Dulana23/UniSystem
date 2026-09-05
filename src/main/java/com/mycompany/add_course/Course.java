@@ -37,5 +37,10 @@ public class Course {
  {
      return courseName;
  }
-            
+ 
+ public int getCreadit()
+ {   
+     
+     return credits;
+ }
 }
