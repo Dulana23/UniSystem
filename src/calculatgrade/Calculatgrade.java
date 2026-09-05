@@ -19,7 +19,7 @@ public class Calculatgrade {
 
     }
 
-    static String getGrade(double marks)  {
+    static String getGrade(double marks) {
 
         if (marks >= 90)
             return "A+";
@@ -46,7 +46,8 @@ public class Calculatgrade {
 
         return "E";
     }
-  static double getGPA(double marks) {
+
+    static double getGPA(double marks) {
 
         String grade = getGrade(marks);
 
@@ -86,7 +87,9 @@ public class Calculatgrade {
         }
 
         String grade = getGrade(marks);
+        double gpa = getGPA(marks);
 
         System.out.println("Grade: " + grade);
+        System.out.println("GPA: " + gpa);
     }
 }
