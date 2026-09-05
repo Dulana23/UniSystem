@@ -48,4 +48,15 @@ public class Course {
          {
              return academicYear;
          }
+ 
+ public  int getsemester()
+ {
+     return semester;
+ }
+ 
+ public void displayDeatils()
+ {
+      System.out.printf("%-10s %-25s %-8d %-6d %-8d%n",
+                courseCode, courseName, credits,academicYear, semester);
+ }
 }
