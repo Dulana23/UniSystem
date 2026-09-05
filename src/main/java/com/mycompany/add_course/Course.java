@@ -43,4 +43,9 @@ public class Course {
      
      return credits;
  }
+ 
+ public int getAcademicYear()
+         {
+             return academicYear;
+         }
 }
