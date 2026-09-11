@@ -60,7 +60,99 @@ public class FileManager {
      
    }
    
+   public void readAllStudents(){
    
+        File file = new File(studentfilePath);
+         
+        if(!file.exists() || file.length() ==0){
+            System.out.println("\n No student records founf in " +studentfilePath);
+            return;
+            
+        }
+        
+        System.out.println("====== Student List =====");
+        
+        try(BufferedReader bufferReader = new BufferedReader(new FileReader(file))){
+            String line;
+            boolean isHeader = true;
+            
+            System.out.println("===== STUDENT LIST ====="); 
+            System.out.printf("%-12s %-18s %-25s %-6s %-10s%n", 
+                               "ID", "Name", "Degree Program", "Year", "Semester");
+            
+            while ((line = bufferReader.readLine()) !=null) {                
+                  if(line.trim().isEmpty()){
+                      continue;
+                  }
+                  
+                  if(isHeader){
+                      isHeader =false;
+                      continue;
+                  
+                  }
+                  
+                  String data[] = line.split(",");
+                  
+                  if (data.length >= 5) {
+                      System.out.printf("%-12s %-18s %-25s %-6s %-10s%n",
+                                           data[0].trim(),
+                                           data[3].trim(),
+                                           data[4].trim(),
+                                           data[5].trim(),
+                                           data[6].trim()); }
+                      }
+            
+        
+        }catch(IOException e){
+             System.out.println("Data couldn't loaded");
+        }
+   
+   }
+   
+   public void searchStudentById(String searchedId){
+            
+          File file = new File(studentfilePath);
+   
+          if(!file.exists() || file.length() ==0) {
+              System.out.println("Data Not Founded");
+              return;
+              
+          }
+          
+          boolean found = false;
+          
+          try(BufferedReader bufferReader = new BufferedReader(new FileReader(file))){
+              String  line;
+              
+              while ((line = bufferReader.readLine()) !=null) {                  
+                   if(line.trim().isEmpty()){
+                       continue;
+                   }
+                   
+                   String data[] = line.split(",");
+                   
+                   if(data.length >= 8 && data[0].trim().equalsIgnoreCase(searchedId.trim())){
+                          System.out.println("\n======= STUDENT FOUND ======");
+                          System.out.println("Student Id :- " +data[0]);
+                          System.out.println("Name       :- " +data[3]);
+                          System.out.println("Degree     :- " +data[4]);
+                          System.out.println("Year       :- " +data[5]);
+                          System.out.println("Semester   :- " +data[6]);
+                         found = true;
+                          break;
+                   }
+                   System.out.println("Student not found ");
+              }
+                  
+          
+          }catch(FileNotFoundException e){
+              System.out.println("Fill not found ");
+          }catch(IOException e){
+               System.out.println("Could not be loaded");
+          
+          }
+   
+   }
    
    
 }
