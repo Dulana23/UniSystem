@@ -43,7 +43,8 @@ public class Main {
              switch(choice){
                  case 1 :
                      System.out.println("Add New Student");
-                      
+                      Student student = new Student();
+                      student.addStudent();
                      
                      break;
                  case 2 :
