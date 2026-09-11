@@ -49,9 +49,13 @@ public class Main {
                      break;
                  case 2 :
                      System.out.println("View All Student");
+                      Student student1 = new Student();
+                      student1.viewAllStudents();
                      break;
                  case 3 :
                      System.out.println("Search Student by ID");
+                     Student student2 = new Student();
+                     student2.searchStudent();
                      break;
                  case 4 :
                      System.out.println("Add Course");
