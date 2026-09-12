@@ -43,19 +43,19 @@ public class Main {
              switch(choice){
                  case 1 :
                      System.out.println("Add New Student");
-                      Student student = new Student();
-                      student.addStudent();
+                      Student student1 = new Student();
+                      student1.addStudent();
                      
                      break;
                  case 2 :
                      System.out.println("View All Student");
-                      Student student1 = new Student();
-                      student1.viewAllStudents();
+                      Student student2 = new Student();
+                      student2.viewAllStudents();
                      break;
                  case 3 :
                      System.out.println("Search Student by ID");
-                     Student student2 = new Student();
-                     student2.searchStudent();
+                     Student student3 = new Student();
+                     student3.searchStudent();
                      break;
                  case 4 :
                      System.out.println("Add Course");
