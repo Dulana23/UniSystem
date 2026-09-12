@@ -59,9 +59,13 @@ public class Main {
                      break;
                  case 4 :
                      System.out.println("Add Course");
+                     Course  course = new Course();
+                      course.addCourses();
                      break;
                  case 5 :
                      System.out.println("View All Course");
+                     Course course1 = new Course();
+                     course1.viewAllCourses();
                      break;
                  case 6:
                      System.out.println("Add Marks For a Student");
