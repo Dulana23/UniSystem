@@ -70,7 +70,7 @@ public class FileManager {
             
         }
         
-        System.out.println("====== Student List =====");
+        
         
         try(BufferedReader bufferReader = new BufferedReader(new FileReader(file))){
             String line;
@@ -154,6 +154,93 @@ public class FileManager {
    
    }
    
+   public void saveCourseData(Course course){
+                File file = new File(coursefilePath);
+                Boolean isNewFile = !file.exists() || file.length()==0;
+                
+                try(BufferedWriter bufferWriter = new BufferedWriter(new FileWriter(file,true))){
+                        
+                    if(isNewFile){
+                         String header = "courseCode,courseName,credits,academicYear,semester";
+                        bufferWriter.write(header);
+                        bufferWriter.newLine();
+                    
+                    }
+                    
+                    String courseData = course.getCourseCode()+","+
+                                        course.getCourseName()+","+
+                                        course.getCredits() +","+
+                                        course.getAcademicYear() +","+
+                                        course.getSemester();
+                    
+                     bufferWriter.write(courseData);
+                     bufferWriter.newLine();
+                     bufferWriter.close();
+                     System.out.println("\nCourse add successful");
+                             
+                }catch (FileNotFoundException e){
+                    System.out.println("File could not found");
+                }catch (IOException e){
+                    System.out.println("could not write file");
+                }
+   
+   
+   }
+   
+    public void readAllCourses() {
+        
+           File file = new File(coursefilePath);
+           Boolean isFile = !file.exists() || file.length() == 0;
+           
+             boolean found = false;
+             
+           if(isFile){
+                  System.out.println("No courses in file");
+                  return;
+                  
+                  
+            }
+           
+           try(BufferedReader bufferReader = new BufferedReader(new FileReader(file))){
+            String line;
+            boolean isHeader = true;
+            
+            System.out.println("===== COURSES LIST =====");
+            System.out.printf("%-12s %-18s %-25s %-6s %-10s%n",
+                               "Course Code", "Course Name" , "Credits", "Year", "Semester");
+            
+            while ((line = bufferReader.readLine()) !=null) {                
+                  if(line.trim().isEmpty()){
+                      continue;
+                  }
+                  
+                  if(isHeader){
+                      isHeader =false;
+                      continue;
+                  
+                  }
+                  
+                  String data[] = line.split(",");
+                  
+                  if(data.length >=5){
+                      System.out.printf("%-12s %-18s %-25s %-6s %-10s%n",
+                                      data[0].trim(),
+                                      data[1].trim(),
+                                      data[2].trim(),
+                                      data[3].trim(),
+                                      data[4].trim());
+                  }
+            }
+            
+        
+        }catch (FileNotFoundException e){
+            System.out.println("File count not be found");
+         
+        }catch(IOException e){
+             System.out.println("Data couldn't loaded");
+        }
+    }
+
    
 }
 
