@@ -39,6 +39,33 @@ public class Student1 extends Person{
         this.currentYear = currentYear;
         this.currentSemester = currentSemester;
     }
+     public String getStudentId() {
+        return studentId;
+    }
+
+    public String getRegistrationNumber() {
+        return registrationNumber;
+    }
+
+    public String getIndexNumber() {
+        return indexNumber;
+    }
+
+    public String getDegreeProgram() {
+        return degreeProgram;
+    }
+
+    public int getCurrentYear() {
+        return currentYear;
+    }
+
+    public int getCurrentSemester() {
+        return currentSemester;
+    }
+
+    public Scanner getScanner() {
+        return scanner;
+    }
 
     @Override
     void addStudent() {
